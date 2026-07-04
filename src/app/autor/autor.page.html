@@ -1,0 +1,50 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start"><ion-menu-button color="light"></ion-menu-button></ion-buttons>
+    <ion-title>Sobre o Autor</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <div class="autor-hero">
+    <div class="avatar"><span class="avatar-iniciais">{{ iniciais }}</span></div>
+    <h1 class="autor-nome">{{ autor.nome }}</h1>
+    <p class="autor-sub">{{ autor.naturalidade }}</p>
+  </div>
+
+  <div class="section-card">
+    <p class="section-header">Informação Pessoal</p>
+    <div class="info-row">
+      <ion-icon name="calendar-outline"></ion-icon>
+      <span class="info-label">Data de nascimento</span>
+      <span class="info-valor">{{ autor.dataNascimento }}</span>
+    </div>
+    <div class="info-row">
+      <ion-icon name="location-outline"></ion-icon>
+      <span class="info-label">Nacionalidade</span>
+      <span class="info-valor">{{ autor.nacionalidade }}</span>
+    </div>
+    <div class="info-row">
+      <ion-icon name="school-outline"></ion-icon>
+      <span class="info-label">Curso</span>
+      <span class="info-valor">{{ autor.curso }}</span>
+    </div>
+    <div class="info-row">
+      <ion-icon name="business-outline"></ion-icon>
+      <span class="info-label">Instituição</span>
+      <span class="info-valor">{{ autor.instituicao }}</span>
+    </div>
+  </div>
+
+  <div class="section-card">
+    <p class="section-header">Biografia</p>
+    <p class="bio-text">{{ autor.biografia }}</p>
+  </div>
+
+  <div class="section-card">
+    <p class="section-header">Géneros Favoritos</p>
+    <div class="chips-row">
+      <ion-chip *ngFor="let g of autor.generosFavoritos" color="primary">{{ g }}</ion-chip>
+    </div>
+  </div>
+  <div style="height:24px"></div>
+</ion-content>

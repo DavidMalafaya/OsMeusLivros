@@ -1,0 +1,45 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start"><ion-menu-button color="light"></ion-menu-button></ion-buttons>
+    <ion-title>Os Meus Livros</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="togglePesquisa()">
+        <ion-icon slot="icon-only" name="search-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+  <ion-toolbar *ngIf="mostrarPesquisa">
+    <ion-searchbar [(ngModel)]="termoPesquisa" (ionInput)="pesquisar()" placeholder="Pesquisar livro ou autor..." animated></ion-searchbar>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="filtros">
+    <ion-chip [class.active]="filtroAtivo==='todos'"  (click)="setFiltro('todos')"><ion-label>Todos ({{ totalLivros }})</ion-label></ion-chip>
+    <ion-chip [class.active]="filtroAtivo==='lidos'"  (click)="setFiltro('lidos')"><ion-label>Lidos ({{ totalLidos }})</ion-label></ion-chip>
+    <ion-chip [class.active]="filtroAtivo==='porler'" (click)="setFiltro('porler')"><ion-label>Por Ler ({{ totalPorLer }})</ion-label></ion-chip>
+  </div>
+
+  <div *ngIf="livrosFiltrados.length > 0; else semLivros">
+    <div class="livro-card" *ngFor="let livro of livrosFiltrados" (click)="abrirDetalhe(livro.id)">
+      <div class="livro-capa">{{ livro.emoji }}</div>
+      <div class="livro-info">
+        <h3>{{ livro.titulo }}</h3>
+        <p>{{ livro.autor }}</p>
+        <div class="estrelas" *ngIf="livro.lido">{{ getEstrelas(livro.classificacao) }}</div>
+      </div>
+      <div class="card-end">
+        <span [class]="livro.lido ? 'badge-lido' : 'badge-porler'">{{ livro.lido ? 'lido' : 'por ler' }}</span>
+        <ion-icon name="chevron-forward-outline"></ion-icon>
+      </div>
+    </div>
+  </div>
+
+  <ng-template #semLivros>
+    <div class="vazio">
+      <ion-icon name="book-outline"></ion-icon>
+      <p>Nenhum livro encontrado.</p>
+    </div>
+  </ng-template>
+  <div style="height:24px"></div>
+</ion-content>

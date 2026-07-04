@@ -1,0 +1,18 @@
+.hero { display:flex; gap:18px; align-items:flex-start; padding:20px 16px; background:#fff; border-bottom:1px solid #f0e8e0; }
+.capa { width:90px; height:124px; border-radius:8px; background:var(--ion-color-tertiary); display:flex; align-items:center; justify-content:center; font-size:44px; flex-shrink:0; box-shadow:3px 3px 12px rgba(107,76,59,0.2); }
+.hero-info { flex:1; padding-top:4px; h1 { font-size:1.1rem; font-weight:700; color:var(--ion-text-color); margin:0 0 4px; } }
+.autor { font-size:0.88rem; color:#7a6055; margin:0 0 10px; font-style:italic; }
+.chips-row { display:flex; flex-wrap:wrap; gap:4px; margin-bottom:10px; ion-chip { height:26px; font-size:12px; margin:0; } }
+.stars-row { display:flex; align-items:center; gap:8px; .estrelas { color:var(--livros-star-color); font-size:16px; } .stars-label { font-size:0.82rem; color:#9e8070; } }
+.body-text { font-size:0.9rem; line-height:1.8; color:#4a3828; margin:0; }
+.opiniao { font-style:italic; border-left:3px solid var(--ion-color-secondary); padding-left:12px; }
+.citacao-card { background:var(--ion-color-tertiary); border-radius:12px; margin:14px 16px 0; padding:16px 20px;
+  .q-mark { font-size:3.5rem; color:var(--ion-color-secondary); line-height:1; display:block; margin-bottom:-12px; }
+  .citacao-text { font-size:0.92rem; line-height:1.75; color:#4a3828; font-style:italic; margin:0 0 10px; }
+  .citacao-fonte { font-size:0.78rem; color:#7a6055; text-align:right; margin:0; font-weight:600; }
+}
+.ficha-row { display:flex; justify-content:space-between; padding:8px 0; border-bottom:0.5px solid #f0e8e0;
+  &:last-child { border-bottom:none; }
+  span:first-child { font-size:0.82rem; color:#9e8070; }
+  span:last-child  { font-size:0.85rem; font-weight:600; color:var(--ion-text-color); }
+}

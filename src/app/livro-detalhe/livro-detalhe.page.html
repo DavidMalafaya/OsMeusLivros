@@ -1,0 +1,57 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start"><ion-back-button defaultHref="/tabs/livros" text="Livros"></ion-back-button></ion-buttons>
+    <ion-title>Detalhes</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="toggleLido()" fill="clear">
+        <ion-icon slot="icon-only" [name]="livro?.lido ? 'checkmark-circle' : 'checkmark-circle-outline'" color="light"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content *ngIf="livro">
+  <div class="hero">
+    <div class="capa">{{ livro.emoji }}</div>
+    <div class="hero-info">
+      <h1>{{ livro.titulo }}</h1>
+      <p class="autor">{{ livro.autor }}</p>
+      <div class="chips-row">
+        <ion-chip color="primary" outline><ion-label>{{ livro.genero }}</ion-label></ion-chip>
+        <ion-chip color="medium" outline><ion-label>{{ livro.anoPublicacao }}</ion-label></ion-chip>
+        <ion-chip [color]="livro.lido ? 'success' : 'warning'" outline>
+          <ion-label>{{ livro.lido ? 'Lido' : 'Por Ler' }}</ion-label>
+        </ion-chip>
+      </div>
+      <div *ngIf="livro.lido" class="stars-row">
+        <span class="estrelas">{{ getEstrelas(livro.classificacao) }}</span>
+        <span class="stars-label">{{ livro.classificacao }}/5</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-card">
+    <p class="section-header">Sinopse</p>
+    <p class="body-text">{{ livro.sinopse }}</p>
+  </div>
+
+  <div class="section-card" *ngIf="livro.lido">
+    <p class="section-header">A Minha Opinião</p>
+    <p class="body-text opiniao">{{ livro.opiniao }}</p>
+  </div>
+
+  <div class="citacao-card" *ngIf="livro.citacao">
+    <span class="q-mark">"</span>
+    <p class="citacao-text">{{ livro.citacao }}</p>
+    <p class="citacao-fonte">— {{ livro.titulo }}</p>
+  </div>
+
+  <div class="section-card">
+    <p class="section-header">Ficha Técnica</p>
+    <div class="ficha-row"><span>Autor</span><span>{{ livro.autor }}</span></div>
+    <div class="ficha-row"><span>Género</span><span>{{ livro.genero }}</span></div>
+    <div class="ficha-row"><span>Ano</span><span>{{ livro.anoPublicacao }}</span></div>
+    <div class="ficha-row"><span>Estado</span><span>{{ livro.lido ? 'Lido' : 'Por Ler' }}</span></div>
+  </div>
+  <div style="height:32px"></div>
+</ion-content>

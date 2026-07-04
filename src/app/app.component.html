@@ -1,0 +1,40 @@
+<ion-app>
+      <ion-menu side="start" menuId="main-menu" contentId="main">
+        <ion-header>
+      <ion-toolbar color="primary">
+        <ion-title>Os Meus Livros</ion-title>
+      </ion-toolbar>
+    </ion-header>
+    <ion-content>
+      <div class="menu-avatar">
+        <div class="avatar-circle">📚</div>
+        <p class="menu-nome">{{ nomeAutor }}</p>
+        <p class="menu-sub">A minha biblioteca</p>
+      </div>
+        <ion-content>
+          <ion-list>
+            <ion-menu-toggle auto-hide="false">
+              <ion-item routerLink="/autor" routerDirection="root">
+                <ion-icon name="contact"></ion-icon>
+                <ion-label>Sobre o Autor</ion-label>
+              </ion-item>
+              <ion-item routerLink="/livros" routerDirection="root">
+                <ion-icon slot="start" name="book"></ion-icon>
+                <ion-label>Os Meus Livros</ion-label>
+              </ion-item>
+              <ion-item routerLink="/categorias" routerDirection="root">
+                <ion-icon slot="start" name="color-palette"></ion-icon>
+                <ion-label>Categorias</ion-label>
+              </ion-item>
+              <ion-item routerLink="/citacoes" routerDirection="root">
+                <ion-icon name="chatboxes"></ion-icon>
+                <ion-label>Citações</ion-label>
+              </ion-item>
+            </ion-menu-toggle>
+          </ion-list>
+        </ion-content>
+    </ion-content>
+      </ion-menu>
+
+      <ion-router-outlet id="main"></ion-router-outlet>
+    </ion-app>

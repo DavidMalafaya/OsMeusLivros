@@ -1,0 +1,6 @@
+.filtros { display:flex; gap:8px; padding:12px 16px 4px; overflow-x:auto;
+  ion-chip { --background:#f0e8e0; --color:#7a6055; height:30px; &.active { --background:var(--ion-color-primary); --color:#fff; } }
+}
+.card-end { display:flex; flex-direction:column; align-items:flex-end; gap:6px; flex-shrink:0; color:#bba898; }
+.vazio { display:flex; flex-direction:column; align-items:center; padding:60px 24px; color:#bba898;
+  ion-icon { font-size:56px; margin-bottom:12px; } p { font-size:0.95rem; } }

@@ -1,0 +1,36 @@
+@import "@ionic/angular/css/core.css";
+@import "@ionic/angular/css/normalize.css";
+@import "@ionic/angular/css/structure.css";
+@import "@ionic/angular/css/typography.css";
+@import "@ionic/angular/css/display.css";
+@import "@ionic/angular/css/padding.css";
+@import "@ionic/angular/css/flex-utils.css";
+@import "theme/variables";
+
+* { font-family: 'Georgia', serif; box-sizing: border-box; }
+ion-content { --background: var(--ion-background-color); }
+
+ion-toolbar {
+  --background: var(--ion-color-primary); --color: #fff; --border-color: transparent;
+  ion-title { font-size: 1.1rem; font-weight: 700; }
+  ion-back-button { --color: #fff; }
+}
+ion-tab-bar { --background: var(--ion-color-primary); border-top: 1px solid rgba(255,255,255,0.1); }
+ion-tab-button { --color: rgba(255,255,255,0.5); --color-selected: var(--ion-color-tertiary); ion-label { font-size: 10px; } }
+
+.livro-card {
+  background: #fff; border-radius: 12px; box-shadow: var(--livros-card-shadow);
+  margin: 8px 16px; padding: 12px; display: flex; align-items: center; gap: 14px;
+  transition: transform 0.15s; cursor: pointer;
+  &:active { transform: scale(0.98); }
+  .livro-capa { width: 56px; height: 78px; border-radius: 6px; background: var(--ion-color-tertiary); flex-shrink: 0; display: flex; align-items: center; justify-content: center; font-size: 26px; }
+  .livro-info { flex: 1; min-width: 0;
+    h3 { font-size: 0.95rem; font-weight: 700; color: var(--ion-text-color); margin: 0 0 2px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    p  { font-size: 0.8rem; color: #7a6055; margin: 0 0 6px; }
+  }
+}
+.badge-lido   { display:inline-block; padding:2px 10px; border-radius:20px; font-size:11px; background:var(--livros-badge-lido-bg);   color:var(--livros-badge-lido-color); }
+.badge-porler { display:inline-block; padding:2px 10px; border-radius:20px; font-size:11px; background:var(--livros-badge-porler-bg); color:var(--livros-badge-porler-color); }
+.estrelas     { color: var(--livros-star-color); font-size: 14px; letter-spacing: 1px; }
+.section-header { font-size:0.7rem; font-weight:700; letter-spacing:1.5px; text-transform:uppercase; color:var(--ion-color-primary); padding:16px 16px 6px; margin:0; }
+.section-card { background:#fff; border-radius:12px; margin:14px 16px 0; padding:4px 16px 14px; box-shadow:0 2px 10px rgba(107,76,59,0.08); }

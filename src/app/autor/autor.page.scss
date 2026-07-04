@@ -1,0 +1,16 @@
+.autor-hero {
+  display:flex; flex-direction:column; align-items:center; padding:36px 24px 24px;
+  background: linear-gradient(160deg, var(--ion-color-primary), var(--ion-color-secondary));
+  .avatar { width:100px; height:100px; border-radius:50%; background:rgba(255,255,255,0.2); border:3px solid rgba(255,255,255,0.5); display:flex; align-items:center; justify-content:center; margin-bottom:16px; }
+  .avatar-iniciais { font-size:2rem; font-weight:700; color:#fff; }
+  .autor-nome { font-size:1.3rem; font-weight:700; color:#fff; margin:0 0 6px; text-align:center; }
+  .autor-sub  { font-size:0.9rem; color:rgba(255,255,255,0.75); margin:0; }
+}
+.info-row { display:flex; align-items:center; gap:10px; padding:8px 0; border-bottom:0.5px solid #f0e8e0;
+  &:last-child { border-bottom:none; }
+  ion-icon { font-size:18px; color:var(--ion-color-secondary); flex-shrink:0; }
+  .info-label { font-size:0.82rem; color:#9e8070; min-width:130px; }
+  .info-valor { font-size:0.85rem; color:var(--ion-text-color); font-weight:600; flex:1; }
+}
+.bio-text { font-size:0.88rem; line-height:1.75; color:#4a3828; margin:0; white-space:pre-line; }
+.chips-row { display:flex; flex-wrap:wrap; gap:6px; padding-top:4px; }

@@ -1,0 +1,30 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start"><ion-menu-button color="light"></ion-menu-button></ion-buttons>
+    <ion-title>Categorias</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <p class="section-header">Géneros Literários</p>
+  <div class="categorias-grid">
+    <div class="cat-card" *ngFor="let g of generos" (click)="abrirCategoria(g)" [class.ativo]="categoriaAtiva === g">
+      <span class="cat-emoji">{{ emoji(g) }}</span>
+      <span class="cat-nome">{{ g }}</span>
+      <span class="cat-count">{{ contar(g) }} livro{{ contar(g) !== 1 ? 's' : '' }}</span>
+    </div>
+  </div>
+
+  <div *ngIf="categoriaAtiva">
+    <p class="section-header">{{ categoriaAtiva }}</p>
+    <div class="livro-card" *ngFor="let livro of livrosDaCategoria" (click)="abrirDetalhe(livro.id)">
+      <div class="livro-capa">{{ livro.emoji }}</div>
+      <div class="livro-info">
+        <h3>{{ livro.titulo }}</h3>
+        <p>{{ livro.autor }}</p>
+        <div class="estrelas" *ngIf="livro.lido">{{ getEstrelas(livro.classificacao) }}</div>
+      </div>
+      <span [class]="livro.lido ? 'badge-lido' : 'badge-porler'">{{ livro.lido ? 'lido' : 'por ler' }}</span>
+    </div>
+  </div>
+  <div style="height:24px"></div>
+</ion-content>

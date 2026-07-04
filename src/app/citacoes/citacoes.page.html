@@ -1,0 +1,28 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start"><ion-menu-button color="light"></ion-menu-button></ion-buttons>
+    <ion-title>Citações</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <p class="section-header">Excertos Marcantes</p>
+
+  <div class="citacao-card" *ngFor="let livro of livrosComCitacao">
+    <span class="q">"</span>
+    <p class="citacao-text">{{ livro.citacao }}</p>
+    <div class="citacao-footer">
+      <span>{{ livro.emoji }}</span>
+      <div class="fonte">
+        <span class="fonte-titulo">{{ livro.titulo }}</span>
+        <span class="fonte-autor">{{ livro.autor }}</span>
+      </div>
+      <span class="estrelas">{{ getEstrelas(livro.classificacao) }}</span>
+    </div>
+  </div>
+
+  <div class="vazio" *ngIf="livrosComCitacao.length === 0">
+    <ion-icon name="chatbubble-ellipses-outline"></ion-icon>
+    <p>Ainda sem citações guardadas.</p>
+  </div>
+  <div style="height:24px"></div>
+</ion-content>
