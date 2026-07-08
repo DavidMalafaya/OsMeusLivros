@@ -14,7 +14,7 @@ export class AutorPage implements OnInit {
     nacionalidade: "Portuguesa",
     curso: "Engenharia da Computação Gráfica e Multimédia",
     instituicao: "IPVC – Escola Superior de Tecnologia e Gestão",
-    biografia: "Estudante de Engenharia da Computação Gráfica e Multimédia no Instituto Politécnico de Viana do Castelo.\nApaixonado por tecnologia e literatura, encontrou nos livros uma forma de explorar outros mundos.\n\n Esta app encontram-se reunidos os livros que mais marcaram o autor, com notas pessoais e citações memoráveis.",
+    biografia: "Estudante de Engenharia da Computação Gráfica e Multimédia no Instituto Politécnico de Viana do Castelo.\nApaixonado por tecnologia, jogos, música e literatura, encontrou nos livros uma forma de explorar outros mundos.\n\n Esta app encontram-se reunidos os livros que mais marcaram o autor, com notas pessoais e citações memoráveis.",
     generosFavoritos: ["Romance", "Ficção Científica", "Policial", "Fantasia"]
   };
 
