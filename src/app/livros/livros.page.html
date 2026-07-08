@@ -22,7 +22,9 @@
 
   <div *ngIf="livrosFiltrados.length > 0; else semLivros">
     <div class="livro-card" *ngFor="let livro of livrosFiltrados" (click)="abrirDetalhe(livro.id)">
-      <div class="livro-capa">{{ livro.emoji }}</div>
+      <div class="livro-capa">
+        <img [src]="livro.imagem" [alt]="livro.titulo" />
+      </div>
       <div class="livro-info">
         <h3>{{ livro.titulo }}</h3>
         <p>{{ livro.autor }}</p>
